@@ -5,17 +5,17 @@ export const PRODUCT_CATEGORIES = [
     featured: [
       {
         name: 'Editor picks',
-        href: ``,
+        href: `#`,
         imageSrc: '/images/woman.jpg',
       },
       {
         name: 'New Arrivals',
-        href: '/products?category=ui_kits&sort=desc',
+        href: '#',
         imageSrc: '/images/samsung.png',
       },
       {
         name: 'Bestsellers',
-        href: '/products?category=ui_kits',
+        href: '#',
         imageSrc: '/images/products 1.png',
       },
     ],
@@ -26,17 +26,17 @@ export const PRODUCT_CATEGORIES = [
     featured: [
       {
         name: 'Favorite Picks',
-        href: `/products?category=icons`,
+        href: `#`,
         imageSrc: '/images/products 1.png',
       },
       {
         name: 'New Arrivals',
-        href: '/products?category=icons&sort=desc',
+        href: '#',
         imageSrc: '/images/laptop-white-background-3d-rendering-computer-generated-image.jpg',
       },
       {
         name: 'Bestselling',
-        href: '/products?category=icons',
+        href: '#',
         imageSrc: '/images/products 3.png',
       },
     ],
