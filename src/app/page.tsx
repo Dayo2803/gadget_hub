@@ -78,7 +78,7 @@ export default function Home() {
           <div className="absolute top-[80%] left-[5%] bg-white rounded-full flex items-center justify-center w-[5rem] h-[5rem] text-xs lg:text-sm font-medium shadow-lg">
             <div className="text-center">
               <span className="block uppercase text-neutral">Only</span>
-              <span className="font-bold text-lg lg:text-xl text-red-900 text-secondary">
+              <span className="font-bold text-lg lg:text-xl text-secondary">
                 $299
               </span>
             </div>
