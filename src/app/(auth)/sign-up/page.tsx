@@ -20,12 +20,41 @@ const Page = () => {
     resolver: zodResolver(AuthCredentialsValidator),
   });
 
+  const { mutate, isLoading } =
+    trpc.auth.createPayloadUser.useMutation({
+      onError: (err) => {
+        if (err.data?.code === 'CONFLICT') {
+          toast.error(
+            'This email is already in use. Sign in instead?'
+          )
+
+          return
+        }
+
+        if (err instanceof ZodError) {
+          toast.error(err.issues[0].message)
+
+          return
+        }
+
+        toast.error(
+          'Something went wrong. Please try again.'
+        )
+      },
+      onSuccess: ({ sentToEmail }) => {
+        toast.success(
+          `Verification email sent to ${sentToEmail}.`
+        )
+        router.push('/verify-email?to=' + sentToEmail)
+      },
+  })
+
   const onSubmit = ({
     email,
     password,
   }: TAuthCredentialsValidator) => {
     // handle the form submission
-    console.log({ email, password });
+    mutate({ email, password })
     // Here, you can add your mutation logic, such as an API call
   };
 
